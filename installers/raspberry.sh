@@ -212,5 +212,10 @@ EOF
 sudo chmod 755 /etc/network/if-up.d/off-power-manager
 sudo /etc/init.d/networking restart
 
+echo "You should now reboot your pi with 'sudo reboot'".
+
+# TODO: 
+#  - WIFI Setup
+#  - SSH Setup
 
 
