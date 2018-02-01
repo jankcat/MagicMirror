@@ -177,3 +177,22 @@ git clone https://github.com/fewieden/MMM-NHL.git
 cd MMM-NHL 
 npm install --productive
 echo "Modules installed."
+
+# remove mouse
+sudo apt-get --yes install unclutter
+echo "@unclutter -display :0 -idle 3 -root -noevents" | sudo tee -a /etc/xdg/lxsession/LXDE-pi/autostart
+
+# disable screen saver
+sudo tee -a ~/.config/lxsession/LXDE-pi/autostart << END
+@xset s noblank
+@xset s off
+@xset -dpms
+END
+
+# Set up boot config
+sudo tee -a /boot/config.txt << END
+display_rotate=1
+avoid_warnings=1
+END
+
+
