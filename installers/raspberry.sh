@@ -110,7 +110,7 @@ fi
 
 cd ~/MagicMirror  || exit
 echo -e "\e[96mInstalling dependencies ...\e[90m"
-if npm run install; then 
+if npm install; then 
 	echo -e "\e[92mDependencies installation Done!\e[0m"
 else
 	echo -e "\e[91mUnable to install dependencies!"
@@ -161,6 +161,14 @@ echo " "
 echo -e "\e[92mWe're ready! Run \e[1m\e[97mDISPLAY=:0 npm start\e[0m\e[92m from the ~/MagicMirror directory to start your MagicMirror.\e[0m"
 echo " "
 echo " "
+
+echo -e "\e[96mInstalling dependency dependencies ...\e[90m"
+if npm run install; then 
+	echo -e "\e[92mDependency dependencies installation Done!\e[0m"
+else
+	echo -e "\e[91mUnable to install dependency dependencies!"
+	exit;
+fi
 
 # install modules
 echo "Installing Modules"
