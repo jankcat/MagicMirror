@@ -86,10 +86,10 @@ var config = {
 		},
 		{
 			module: 'MMM-NHL',
-			position: 'top_right',
+			position: 'top_left',
 			config: {
 				focus_on: ['CGY'],
-				matches: 4
+				matches: 5
 			}
 		}
 	]
