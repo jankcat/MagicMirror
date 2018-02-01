@@ -197,7 +197,7 @@ avoid_warnings=1
 END
 
 # disable WIFI sleep mode
-sudo tee -a/etc/modprobe.d/8192cu.conf << END
+sudo tee -a /etc/modprobe.d/8192cu.conf << END
 # Disable power saving
 options 8192cu rtw_power_mgnt=0 rtw_enusbss=1 rtw_ips_mode=1
 END
