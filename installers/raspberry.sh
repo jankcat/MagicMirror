@@ -188,11 +188,29 @@ sudo tee -a ~/.config/lxsession/LXDE-pi/autostart << END
 @xset s off
 @xset -dpms
 END
+sudo sed -i '/^\[Seat:\*\]$/a xserver-command=X -s 0 -dpms' /etc/lightdm/lightdm.conf
 
 # Set up boot config
 sudo tee -a /boot/config.txt << END
 display_rotate=1
 avoid_warnings=1
 END
+
+# disable WIFI sleep mode
+sudo tee -a/etc/modprobe.d/8192cu.conf << END
+# Disable power saving
+options 8192cu rtw_power_mgnt=0 rtw_enusbss=1 rtw_ips_mode=1
+END
+
+cat << EOF | sudo tee /etc/network/if-up.d/off-power-manager
+#!/bin/sh
+# off-power-manager - Disable the internal power manager of the (built-in) wlan0 device
+# Added by MagicMirrorSetup
+iw dev wlan0 set power_save off
+EOF
+
+sudo chmod 755 /etc/network/if-up.d/off-power-manager
+sudo /etc/init.d/networking restart
+
 
 
