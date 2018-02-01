@@ -169,15 +169,32 @@ else
 	exit;
 fi
 
-# install nhl module
-echo "Installing NHL Module..."
+# MODULES STARTING
+echo "Installing modules..."
 cd modules
+
+# install nhl module
+echo "Installing NHL module..."
 # git clone https://github.com/fewieden/MMM-NHL.git
 git clone https://github.com/Trentent/MMM-NHL.git
 cd MMM-NHL 
 # npm install --productive
 npm install
-echo "NHL Module installed."
+cd ..
+echo "NHL module installed."
+
+# install pir sensor module
+echo "Installing PIR Sensor module..."
+git clone https://github.com/paviro/MMM-PIR-Sensor.git
+cd MMM-PIR-Sensor
+npm install
+sudo usermod -a -G gpio pi
+sudo chmod u+s /opt/vc/bin/tvservice && sudo chmod u+s /bin/chvt
+cd ..
+echo "PIR Sensor module installed."
+
+# MODULES DONE
+echo "Modules installed."
 
 # remove mouse
 sudo apt-get install -y unclutter
