@@ -89,7 +89,7 @@ var config = {
 			position: 'top_left',
 			config: {
 				focus_on: ['CGY'],
-				matches: 999
+				datesToLookAhead: 30
 			}
 		}
 	]
