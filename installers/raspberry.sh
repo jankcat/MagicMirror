@@ -169,13 +169,15 @@ else
 	exit;
 fi
 
-# install modules
-echo "Installing Modules"
+# install nhl module
+echo "Installing NHL Module..."
 cd modules
-git clone https://github.com/fewieden/MMM-NHL.git
+# git clone https://github.com/fewieden/MMM-NHL.git
+git clone https://github.com/Trentent/MMM-NHL.git
 cd MMM-NHL 
-npm install --productive
-echo "Modules installed."
+# npm install --productive
+npm install
+echo "NHL Module installed."
 
 # remove mouse
 sudo apt-get install -y unclutter
