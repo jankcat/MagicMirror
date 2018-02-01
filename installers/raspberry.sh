@@ -176,7 +176,8 @@ cd modules
 # install nhl module
 echo "Installing NHL module..."
 # git clone https://github.com/fewieden/MMM-NHL.git
-git clone https://github.com/Trentent/MMM-NHL.git
+# git clone https://github.com/Trentent/MMM-NHL.git
+git clone https://github.com/jankcat/MMM-NHL.git
 cd MMM-NHL 
 # npm install --productive
 npm install
