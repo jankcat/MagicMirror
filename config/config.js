@@ -42,10 +42,11 @@ var config = {
 			header: "Upcoming",
 			position: "top_left",
 			config: {
-				maximumEntries: 6,
+				maximumEntries: 7,
 				maximumNumberOfDays: 30,
-				fadePoint: 0.5,
+				//fadePoint: 0.5,
 				timeFormat: 'absolute',
+				dateFormat: 'MMM Do h:mm A',
 				getRelative: 0,
 				urgency: 0,
 				hidePrivate: true,
